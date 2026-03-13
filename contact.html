@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Janice M. Jones</title>  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="resources/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="resources/favicon-16.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;1,9..40,400&family=DM+Serif+Display:ital@0;1&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="./" class="nav-brand">Janice M. Jones</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="./">Home</a></li>
+        <li><a href="about-janice.html">About</a></li>
+        <li><a href="asian-series.html">Asian Series</a></li>
+        <li><a href="african-series.html">African Series</a></li>
+        <li><a href="masters-series.html">Masters Series</a></li>
+        <li><a href="environmental.html">Environmental</a></li>
+        <li><a href="mixed-media.html">Mixed Media</a></li>
+        <li><a href="teaching.html">Teaching</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <div class="container">
+      <h1>Get in Touch</h1>
+      <p>To learn more about Janice's art or current exhibitions, reach out below.</p>
+    </div>
+  </div>
+
+  <section class="contact-section">
+    <div class="container">
+      <div class="contact-card">
+        <p>Whether you're interested in a piece, have questions about exhibitions, or would like to discuss workshops and lectures, Janice would love to hear from you.</p>
+        <a href="mailto:janicemaejones@gmail.com" class="contact-email">janicemaejones@gmail.com</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Janice M. Jones</div>
+        <div class="footer-tagline">Textile Art Quilts</div>
+      </div>
+      <ul class="footer-links">
+        <li><a href="about-janice.html">About</a></li>
+        <li><a href="asian-series.html">Asian Series</a></li>
+        <li><a href="african-series.html">African Series</a></li>
+        <li><a href="masters-series.html">Masters Series</a></li>
+        <li><a href="environmental.html">Environmental</a></li>
+        <li><a href="mixed-media.html">Mixed Media</a></li>
+        <li><a href="teaching.html">Teaching</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Janice M. Jones. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('navToggle');
+    const links = document.getElementById('navLinks');
+    toggle.addEventListener('click', () => { toggle.classList.toggle('open'); links.classList.toggle('open'); });
+    links.querySelectorAll('a').forEach(l => l.addEventListener('click', () => { toggle.classList.remove('open'); links.classList.remove('open'); }));
+  fetch("data/hits.json").then(r=>r.json()).then(d=>{document.querySelectorAll(".visitor-count").forEach(el=>{el.textContent=d.total.toLocaleString()})}).catch(()=>{});</script>
+</body>
+</html>

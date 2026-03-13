@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teaching | Janice M. Jones</title>  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="resources/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="resources/favicon-16.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;1,9..40,400&family=DM+Serif+Display:ital@0;1&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="./" class="nav-brand">Janice M. Jones</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="./">Home</a></li>
+        <li><a href="about-janice.html">About</a></li>
+        <li><a href="asian-series.html">Asian Series</a></li>
+        <li><a href="african-series.html">African Series</a></li>
+        <li><a href="masters-series.html">Masters Series</a></li>
+        <li><a href="environmental.html">Environmental</a></li>
+        <li><a href="mixed-media.html">Mixed Media</a></li>
+        <li><a href="teaching.html" class="active">Teaching</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <div class="container">
+      <h1>Teaching</h1>
+      <p>Lectures, trunk shows, and hands-on workshops.</p>
+    </div>
+  </div>
+
+  <section class="teaching-section">
+    <div class="container">
+      <div class="teaching-layout">
+        <div class="teaching-photo">
+          <img src="resources/teaching-portrait.jpg" alt="David and Janice Jones">
+        </div>
+        <div class="teaching-body">
+          <p>My husband, David, is also an artist who works with oil as his medium. Together we enjoy giving Lectures, Trunk Shows, and Workshops.</p>
+
+          <h3>Lectures &amp; Trunk Shows</h3>
+          <p>Our lectures include a presentation of our journeys as artists along with inspiration, stories, and examples of our work. We also exhibit collaborations from our joint creative process.</p>
+
+          <h3>Workshops</h3>
+          <p>Our workshop technique involves taking fabric, paint (or any medium) spread on a surface for artists to study and identify abstract shapes as compositional drivers. Participants create finished pieces during sessions with peer input and feedback.</p>
+
+          <a href="Jones_Art_Brochure.pdf" class="btn">Download Brochure</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Janice M. Jones</div>
+        <div class="footer-tagline">Textile Art Quilts</div>
+      </div>
+      <ul class="footer-links">
+        <li><a href="about-janice.html">About</a></li>
+        <li><a href="asian-series.html">Asian Series</a></li>
+        <li><a href="african-series.html">African Series</a></li>
+        <li><a href="masters-series.html">Masters Series</a></li>
+        <li><a href="environmental.html">Environmental</a></li>
+        <li><a href="mixed-media.html">Mixed Media</a></li>
+        <li><a href="teaching.html">Teaching</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom"><span>&copy; 2026 Janice M. Jones. All rights reserved.</span><span class="visitor-counter"><svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z"/><circle cx="12" cy="12" r="3"/></svg><span class="visitor-count">10,489</span> visitors</span></div>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('navToggle');
+    const links = document.getElementById('navLinks');
+    toggle.addEventListener('click', () => { toggle.classList.toggle('open'); links.classList.toggle('open'); });
+    links.querySelectorAll('a').forEach(l => l.addEventListener('click', () => { toggle.classList.remove('open'); links.classList.remove('open'); }));
+  fetch("data/hits.json").then(r=>r.json()).then(d=>{document.querySelectorAll(".visitor-count").forEach(el=>{el.textContent=d.total.toLocaleString()})}).catch(()=>{});</script>
+</body>
+</html>
